@@ -1,19 +1,19 @@
 import { Injectable } from '@nestjs/common';
 import { CreateContactDto } from './dto/create-contact.dto';
 import { UpdateContactDto } from './dto/update-contact.dto';
-import { Contact, ContactSchema } from './entities/contact.entity';
+import { Stripe, StripeSchema } from './entities/stripe.entity';
 import { Model, Types } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 
 // check here
 @Injectable()
-export class ContactsService {
+export class StripesService {
   constructor(
-    @InjectModel(Contact.name)
-    private readonly model: Model<Contact>,
+    @InjectModel(Stripe.name)
+    private readonly model: Model<Stripe>,
   ) {}
 
-  async create(createContactDto: CreateContactDto): Promise<Contact> {
+  async create(createContactDto: CreateContactDto): Promise<Stripe> {
     const libraryDocument = new this.model({
       ...createContactDto,
       completedAt: new Date(),
@@ -33,7 +33,7 @@ export class ContactsService {
   async update(
     id: string,
     updateContactDto: UpdateContactDto,
-  ): Promise<Contact> {
+  ): Promise<Stripe> {
     return await this.model.findByIdAndUpdate(id, updateContactDto).exec();
   }
 
