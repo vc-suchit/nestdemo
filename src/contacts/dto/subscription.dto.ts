@@ -3,7 +3,7 @@ export class SubscriptionDto {
 
   amount: number;
 
-  tractionType: Object;
+  tractionType: string;
 
   createdAt?: Date;
 

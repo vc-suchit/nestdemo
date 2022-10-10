@@ -7,7 +7,7 @@ async function bootstrap() {
   });
   app.setGlobalPrefix('/v1');
   await app.listen(process.env.PORT);
-  console.log(`App Are Working On Port 3000`)
+  console.log(`App Are Working On Port 3000`);
 }
 
 bootstrap();

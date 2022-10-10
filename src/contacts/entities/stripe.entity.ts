@@ -16,12 +16,12 @@ export class Stripe extends Document {
   amount: number;
 
   @Prop({ type: String })
-  transactionStatus: String;
+  transactionStatus: string;
 
   @Prop({ type: Types.ObjectId, required: true })
   subscriptionId: Types.ObjectId;
 
-  @Prop({ type: Date, required: true })
+  @Prop({ type: Date })
   expiryDate: Date;
 
   @Prop()

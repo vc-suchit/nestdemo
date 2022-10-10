@@ -5,10 +5,12 @@ import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ContactsModule } from './contacts/contacts.module';
-import { ContactsService } from './contacts/contacts.service';
+
 @Module({
   imports: [
-    ConfigModule.forRoot({}),
+    ConfigModule.forRoot({
+      isGlobal: true
+    }),
     HttpModule,
     ConfigModule,
     MongooseModule.forRoot(process.env.DATABASE_URL),
@@ -18,5 +20,5 @@ import { ContactsService } from './contacts/contacts.service';
   providers: [AppService],
 })
 export class AppModule {
-  constructor() {}
+  constructor() { }
 }

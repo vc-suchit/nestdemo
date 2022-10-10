@@ -11,7 +11,7 @@ export enum TransactionType {
 }
 
 @Schema({ timestamps: true })
-export class Stripe extends Document {
+export class Subscriptions extends Document {
   @Prop({ type: String })
   description?: string;
 
@@ -31,4 +31,4 @@ export class Stripe extends Document {
   deletedAt?: Date;
 }
 
-export const StripeSchema = SchemaFactory.createForClass(Stripe);
+export const SubscriptionsSchema = SchemaFactory.createForClass(Subscriptions);

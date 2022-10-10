@@ -4,13 +4,23 @@ export class StripeTransactionDto {
 
   stripeCustomerId?: string;
 
-  stripeCustomerIdRes?: JSON;
+  stripeCustomerIdRes?: object;
 
   amount: number;
 
+  expiryDate?: Date;
+
   transactionStatus: string;
 
-  subscriptionId: string;
+  subscriptionId: Types.ObjectId;
+}
 
-  expiryDate: Date;
+export class CreditCardDto {
+  CardHolderName?: string;
+
+  CardNumber: number;
+
+  expiry: string;
+
+  cvv?: string;
 }
